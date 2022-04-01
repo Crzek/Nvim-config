@@ -1,0 +1,55 @@
+Comandos Basicos Para NeoVim
+https://stsewd.dev/es/posts/neovim-installation-configuration/
+
+------------------------
+- instalacion en KAli  -
+------------------------
+sudo apt install neovim
+
+
+Los archivos para la configuracion se guardan en la raiz siguiente en nvim
+Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+
+VIM
+/home/suprem/.local/share/
+
+
+
+EN Windonws
+C:\Users\ERICK\AppData\Local\nvim:
+
+Basico 
+
+Moverse por vim
+
+h,j,k,l, (w,e,b)
+
+Insertar texto
+i,I
+a,A
+
+borrar texto
+d,D
+x,X
+
+Borrar + Insrtar
+c,C
+s,S
+
+deshacr y Rehacer
+u
+control + r
+
+guardar archivos
+:w
+
+abrir archivos
+:e <ruta>
+
+Autocompletar
+Control + P
+control + n
+
