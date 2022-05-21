@@ -14,10 +14,69 @@ touch nvim/init.vim
 
 /home/suprem/.local/share/
 
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+mkdir nvim
+touch nvim/init.vim
 
 
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+-cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+-mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
 EN Windonws
 C:\Users\ERICK\AppData\Local\nvim:
+
+
+
+mkdir nvim
+mkdir nvim
+touch nvim/init.vim
+EN Windonws
+touch nvim/init.vim
+EN Windonws
+
+
 
 Basico 
 

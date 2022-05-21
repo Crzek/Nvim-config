@@ -1,6 +1,12 @@
 Comandos Basicos Para NeoVim
 https://stsewd.dev/es/posts/neovim-installation-configuration/
 
+Para instalar los plugins de Vim hay que crear la carpeta Nvim 
+luego hay que crear un archivo 'init.vim'
+una ves se tenga escrito los set y los plug
+hay que ir al cmd ha intalar vim plug ----> para hacer Plugginstall
+https://github.com/junegunn/vim-plug
+
 ------------------------
 - instalacion en KAli  -
 ------------------------

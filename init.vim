@@ -1,4 +1,5 @@
 
+
 "________Configuracion basica
 syntax on
 syntax enable 				"activa el coloreado de sintaxis en algunos tipos de archivos como html, c, c++
@@ -33,7 +34,7 @@ set nowrap				"el texto en una linea no baja a la siguiente, solo continua en la
 set noswapfile				"para evitar el mensaje que sale al abrir algunos archivos sobre swap.
 set clipboard=unnamedplus			"para poder utilizar el portapapeles del sistema operativo 'esto permite poder copiar y pegar desde cualquier parte a nvim y viceversa.	
 " set statusline+=%F
-set clipboard=unnamed
+" set clipboard=unnamed
 
 
 "------Instalacion
@@ -60,14 +61,16 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+" Plugin 'neoclide/coc.vim'
 
 "---Plugin Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
 "Pluggin snippet javascript (atajos)
-Plug 'SirVer/ultisnips'
-Plug 'mlaursen/vim-react-snippets'
+ " Plug 'SirVer/ultisnips'
+" Plug 'mlaursen/vim-react-snippets'
 
 "Plug Emmet----
 Plug 'mattn/emmet-vim'    
@@ -114,14 +117,14 @@ call plug#end()
 
 "----SHELL config----
 
-if exists('$SHELL')
-    set shell=$SHELL
-else
-    set shell=/bin/zsh
-endif
+"if exists('$SHELL')
+"    set shell=$SHELL
+"else
+"    set shell=/bin/zsh
+"endif
 
-set shell=powershell.exe
-
+set shell=powershell.exe      # se ejecuta con :terminal
+" nmap <leader><F1> :terminal<CR>
 
 "---------Gruvbox Configuracion"
 set background=dark
@@ -196,7 +199,7 @@ EOF
 
 "-----snippet (atajos) javascript, config 
 "https://github.com/mlaursen/vim-react-snippets
-let g:UtilSnipsExpandTrigger="<CR>"
+" let g:UtilSnipsExpandTrigger="<CR>"
 
 
 
@@ -221,7 +224,6 @@ let g:user_emmet_settings={
 command! -nargs=0 Prettier :CocCommand Prettier.formatFile
 nnoremap <C-D> :Prettier<CR>:                                   "contro +D se ejecuta el Prettier"
 
-"------Config comentario
 
 
 "------COC config predeterminado, estraido de git https://github.com/neoclide/coc.nvim
@@ -244,12 +246,13 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
+if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
 else
   set signcolumn=yes
 endif
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
