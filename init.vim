@@ -68,9 +68,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
-"Pluggin snippet javascript (atajos)
- " Plug 'SirVer/ultisnips'
-" Plug 'mlaursen/vim-react-snippets'
+"--------- snippet  (atajos)
+" Plug 'neoclide/coc-snippets' no se pone ya que se debe de intalar por comand
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
+
 
 "Plug Emmet----
 Plug 'mattn/emmet-vim'    
@@ -98,7 +101,6 @@ Plug 'ryanoasis/vim-devicons' "devicons
 Plug 'vim-syntastic/syntastic'
 
 "--------- Test
-"
 Plug 'vim-test/vim-test'
 
 "------Plug fzf----Buscar entre archivos del proy
@@ -108,9 +110,6 @@ Plug 'junegunn/fzf.vim'
 
 "------Plug vimspector----DEBUG
 Plug 'puremourning/vimspector'
-
-
-
 
 call plug#end()
 "--------------------------------------------
@@ -225,6 +224,35 @@ command! -nargs=0 Prettier :CocCommand Prettier.formatFile
 nnoremap <C-D> :Prettier<CR>:                                   "contro +D se ejecuta el Prettier"
 
 
+"---------Coc-snippets configuration------------
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = ";"
+
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand) 
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Esto es para ir al siguiente espacio a modificar cuando creas tu esnipet o el estnipet se modificar
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+let g:coc_snippet_next = '<tab>'
+
+
 
 "------COC config predeterminado, estraido de git https://github.com/neoclide/coc.nvim
 " TextEdit might fail if hidden is not set.
@@ -269,11 +297,8 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
+
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
