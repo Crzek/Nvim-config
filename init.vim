@@ -69,8 +69,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
 "--------- snippet  (atajos)
- " Plug 'SirVer/ultisnips'
-" Plug 'mlaursen/vim-react-snippets'
 " Plug 'neoclide/coc-snippets' no se pone ya que se debe de intalar por comand
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -103,7 +101,6 @@ Plug 'ryanoasis/vim-devicons' "devicons
 Plug 'vim-syntastic/syntastic'
 
 "--------- Test
-"
 Plug 'vim-test/vim-test'
 
 "------Plug fzf----Buscar entre archivos del proy
@@ -227,17 +224,20 @@ command! -nargs=0 Prettier :CocCommand Prettier.formatFile
 nnoremap <C-D> :Prettier<CR>:                                   "contro +D se ejecuta el Prettier"
 
 
-
 "---------Coc-snippets configuration------------
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = ";"
+
+
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand) 
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
 
+" Esto es para ir al siguiente espacio a modificar cuando creas tu esnipet o el estnipet se modificar
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-j>'
 
@@ -250,13 +250,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-noremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-" let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<tab>'
 
 
 
