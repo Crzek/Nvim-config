@@ -151,6 +151,13 @@ nmap <silent> <leader>g :TestVisit<CR>
 "
 "config basada en visual studio code----
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+ mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
 "let g:vimspector_enable_mappings = 'HUMAN'
 "-Para personalizar  https://www.youtube.com/watch?v=wIU6Roqmljs
 
@@ -228,7 +235,7 @@ nnoremap <C-D> :Prettier<CR>:                                   "contro +D se ej
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger = ";"
+let g:UltiSnipsExpandTrigger = ";"          "corrige el error de TAB"
 
 
 " Use <C-l> for trigger snippet expand.
