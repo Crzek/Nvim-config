@@ -1,0 +1,22 @@
+{
+  "configurations": {
+
+     
+    "<name>: Launch": {
+      "adapter": "debugpy",
+      "filetypes": [ "python" ],
+      "configuration": {
+        "name": "<name>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "<working directory>",
+        "python": "C:\Users\ERICK\AppData\Local\Programs\Python\Python310",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "<path to main python file>"
+      }
+    }
+    ...
+  }
+}
