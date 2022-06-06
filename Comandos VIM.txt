@@ -39,6 +39,8 @@ b   -> inicio de la anterior palabra, BACK
 
 ~   --> te pone de mayus a minus o viceversa
 .   --> repite el comando anterior
+/(palabra o caracter a buscar)  -->next (n), back (shith +n)
+%   ---> moverse de un parentesis a otro
 
 gg    -> ir al principio del doc
 G     -> ir al final del doc
@@ -109,6 +111,12 @@ control + n
 
 ----Dividir pantalla
 :sp  ---> dividir misma pantalla
+
+-----Navegar 
+gd  -->ir a la definicion de la funcio, tiene que estar en el cursor
+df   --> ir al archivo donde se encuentra
+Control + o   --> NEXT
+Control + i   -->back 
 
 ---help, para mas ayuda 
 :help (comando)
