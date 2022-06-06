@@ -29,33 +29,86 @@ C:\Users\ERICK\AppData\Local\nvim:
 
 Basico 
 
-Moverse por vim
+---Moverse por vim
 
 h,j,k,l, (w,e,b)
 
-Insertar texto
-i,I
-a,A
+w   ->inicio primera palabra, NEXT
+e   ->final de la palabra NEXT
+b   -> inicio de la anterior palabra, BACK
 
-borrar texto
-d,D
-x,X
+~   --> te pone de mayus a minus o viceversa
+.   --> repite el comando anterior
 
-Borrar + Insrtar
-c,C
+gg    -> ir al principio del doc
+G     -> ir al final del doc
+o     -> insertar nueva linea abajo
+O     -> inserta nueva linea arriba
+
+H    -> arriab hasta la pantalla
+L    -> abajo hata pantalla
+M   --> al madio de la pantalla
+
+------Movimiento horizontal
+f + (caracter) -->te lleba al carrecter que conside, NEXT (;) BACK (,)
+t + (Caracter) -->te lleba al caracter que conincide, pero anterior
+
+
+---Modo remplazar
+r 
+shift + r
+
+----Insertar texto
+i,I    inserta al principio
+a,A     inserta al final
+
+----Copiar & pegar (modo visual)
+y    ->copia
+p    ->pegar despues de cursor
+P    -> pegar antes del cursor
+
+----Modo Normal -- Copiar
+yy   -> copiar toda la linia
+yiw  -> copiar una palabra
+
+
+-----borrar texto
+d   ->cortar (visual)
+D   ->cortar desde el curssor hasta el final de la linea
+dd  ->cortar toda la linea
+x   ->corta lo que marca el cursor
+X   -> corta lo que hay antes del cursor
+diw -> Modo Normal, corta la palabra
+dw  -> elimina palabra
+
+-----Borrar + Insrtar
+c
+C
+cw  -> borra desde el cursor hasta el fin de la palabra + se pone un modo Insertar
+ciw -> borra la palabra (no importa donde este el cursor)+ se pone en modo Insertar
 s,S
 
-deshacr y Rehacer
+-----deshacr y Rehacer
 u
 control + r
 
-guardar archivos
+----guardar archivos
 :w
 
-abrir archivos
+----abrir archivos
 :e <ruta>
 
-Autocompletar
+----Autocompletar
 Control + P
 control + n
 
+-----Sustituir, atraves de linia de Comandos
+:s/old word/new word       ---->solo sustituye la 1r ocurrencia
+:s/old word/new word/g     ----> (g)todas la ocurriencias de la linia
+:%s/old word/new word/gc     ---->(%) todas la ocurriencias del doc +(c) me prguntara que hace con cada 1
+
+----Dividir pantalla
+:sp  ---> dividir misma pantalla
+
+---help, para mas ayuda 
+:help (comando)
