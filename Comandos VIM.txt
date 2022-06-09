@@ -7,6 +7,7 @@ una ves se tenga escrito los set y los plug
 hay que ir al cmd ha intalar vim plug ----> para hacer Plugginstall
 https://github.com/junegunn/vim-plug
 
+
 ------------------------
 - instalacion en KAli  -
 ------------------------
@@ -55,6 +56,14 @@ M   --> al madio de la pantalla
 f + (caracter) -->te lleba al carrecter que conside, NEXT (;) BACK (,)
 t + (Caracter) -->te lleba al caracter que conincide, pero anterior
 
+----Modo visual, modoficar varias lineas
+1r. C + v --> modo visual bloque
+2n. seleccionas lineas
+3r. Shift + i
+4t. Modicas
+5t. Ecs
+
+
 
 ---Modo remplazar
 r 
@@ -82,6 +91,17 @@ x   ->corta lo que marca el cursor
 X   -> corta lo que hay antes del cursor
 diw -> Modo Normal, corta la palabra
 dw  -> elimina palabra
+
+daw  para eliminar una palabra (más espacios en blanco al final )
+diw  para borrar una palabra interior _ _
+das  para borrar una oración ( borrar disoración interna)
+da"  para eliminar algo entre comillas dobles, incluidas las comillas
+di"  para eliminar algo dentro de comillas dobles
+dap  para borrar un párrafo
+dab   da(o da)  para eliminar un bloque rodeado de(
+daB   da{o da}  para eliminar un bloque rodeado de{
+dat  para eliminar una etiqueta HTML
+dit  para eliminar el contenido de una etiqueta HTML
 
 -----Borrar + Insrtar
 c
@@ -120,3 +140,46 @@ Control + i   -->back
 
 ---help, para mas ayuda 
 :help (comando)
+
+Comandos de plegado de Vim --fold
+---------------------------------
+zf#j crea un pliegue desde el cursor hacia abajo # líneas.
+zf/ string crea un pliegue desde el cursor hasta string .
+zj mueve el cursor al siguiente pliegue.
+zk mueve el cursor al pliegue anterior.
+za alternar un pliegue en el cursor.
+zo abre un pliegue en el cursor.
+zO abre todos los pliegues en el cursor.
+zc cierra un pliegue debajo del cursor.
+zm aumenta el foldlevel en uno.
+zM cierra todos los pliegues abiertos.
+zr disminuye el foldlevel en uno.
+zR reduce el nivel de pliegue a cero; todos los pliegues estarán abiertos.
+zd elimina el pliegue en el cursor.
+zE elimina todos los pliegues.
+[z mover al inicio del pliegue abierto.
+]z mover hasta el final del pliegue abierto.
+
+
+------aoutoPair
+<M-e>, se refiere a --- alt +e ----->pone en parenteis todo la palabra, pero antes poner "()"
+
+input: (|){["foo"]} (press <M-}> at |)
+output: ({["foo"]}|)
+
+input: |[foo, bar()] (press (<M-]> at |)
+output: ([foo, bar()]|)
+
+System Shortcuts:
+    <CR>  : Insert new indented line after return if cursor in blank brackets or quotes.
+    <BS>  : Delete brackets in pair
+    <M-p> : Toggle Autopairs (g:AutoPairsShortcutToggle)
+    <M-e> : Fast Wrap (g:AutoPairsShortcutFastWrap)
+    <M-n> : Jump to next closed pair (g:AutoPairsShortcutJump)
+    <M-b> : BackInsert (g:AutoPairsShortcutBackInsert)
+
+If <M-p> <M-e> or <M-n> conflict with another keys or want to bind to another keys, add
+
+    let g:AutoPairsShortcutToggle = '<another key>'
+
+to .vimrc, if the key is empty string '', then the shortcut will be disabled. 

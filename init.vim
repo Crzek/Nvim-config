@@ -1,6 +1,16 @@
 
-
 "________Configuracion basica
+
+set nocompatible      "para vim-polyglot"
+
+" Esto pliega automáticamente los archivos que abre, según la sangría, 
+" para todo lo que tenga sangría de más de 1 nivel. 
+" La opción foldclose hace que el pliegue se vuelva a cerrar automáticamente 
+" después de navegar fuera del pliegue.
+set foldmethod=indent
+set foldlevel=1
+" set foldclose=all
+
 syntax on
 syntax enable 				"activa el coloreado de sintaxis en algunos tipos de archivos como html, c, c++
 set encoding=utf-8 			"permite setear la codificación de archivos para aceptar caracteres especiales
@@ -41,7 +51,9 @@ set clipboard=unnamedplus			"para poder utilizar el portapapeles del sistema ope
 "pulggins----------------------------------------------------------------------------------------------------------------"
 call plug#begin('~/AppData/Local/nvim/plugged')
 
-Plug 'sainnhe/gruvbox-material'
+Plug 'sheerun/vim-polyglot'
+
+" Plug 'sainnhe/gruvbox-material'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
@@ -54,6 +66,7 @@ Plug 'christoomey/vim-tmux-navigator'               "ya viene conficgurado, sirv
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'luochen1990/rainbow'
 
 "-----Autocompletado
 "Lsp
@@ -122,12 +135,12 @@ call plug#end()
 "    set shell=/bin/zsh
 "endif
 
-set shell=powershell.exe      # se ejecuta con :terminal
+" set shell=powershell.exe      # se ejecuta con :terminal
 " nmap <leader><F1> :terminal<CR>
 
 "---------Gruvbox Configuracion"
 set background=dark
-let g:gruvbox_material_background='hard'                "also try medium, ligth, dark -----this is de backgroundcolor
+" let g:gruvbox_material_background='hard'                "also try medium, ligth, dark -----this is de backgroundcolor
 colorscheme gruvbox
 
 "---Maptecla lider
@@ -151,7 +164,10 @@ nmap <silent> <leader>g :TestVisit<CR>
 "
 "config basada en visual studio code----
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
- mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+ " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+xmap <Leader>ee :VimspectorReset<CR>  
+"Para poder depurar hay que instlar 
+":VimspectorInstall --all --force-all
 
 " for normal mode - the word under the cursor
 nmap <Leader>di <Plug>VimspectorBalloonEval
@@ -176,7 +192,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 map <C-z> :bprevious<CR>                "cambiar de buffer (ventanas) 
 map <C-x> :bnext<CR>
-
+map <C-c> :bdelete<CR>                   "eliminar buffer"
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -186,6 +202,11 @@ let g:airline_powerline_fonts = 1
 
 "----
 " let g:airline_section_b = airline#section#create(['mode', ' ' , 'branch']) 
+
+"------Autopair config
+let g:AutoPairsFlyMode = 1
+"rainbow_active
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
 "-------congig sintaxis-----
@@ -210,7 +231,8 @@ EOF
 
 
 "----commentary config
-nnoremap <space>/ :Commentary<CR>:
+nnoremap <space>/ :Commentary<CR>
+vnoremap <space>/ :Commentary<CR>
 " let g:python3_host_prog ="~/AppData/Local/Programs/Python/Python310"
 " let g:python3_host_prog = '/path/to/python3'
 "Esto meter si daria error en chekhelp sobre python no found
@@ -227,16 +249,21 @@ let g:user_emmet_settings={
       
 
 "---------CONFIG Prettier---------------
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 command! -nargs=0 Prettier :CocCommand Prettier.formatFile
-nnoremap <C-D> :Prettier<CR>:                                   "contro +D se ejecuta el Prettier"
+nnoremap <C-D> :Prettier<CR>:                                   
+"contro +D se ejecuta el Prettier"
 
 
 "---------Coc-snippets configuration------------
-
+"------UltiSnips -----vim-snippets-----------
 let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger = ";"          "corrige el error de TAB"
+let g:UltiSnipsExpandTrigger = ";"          
+"corrige el error de TAB"
 
+"--------Coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight') 
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand) 
