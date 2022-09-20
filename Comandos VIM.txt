@@ -160,8 +160,11 @@ zE elimina todos los pliegues.
 [z mover al inicio del pliegue abierto.
 ]z mover hasta el final del pliegue abierto.
 
+Files <archivo>  ----busca un archivo 
 
-------aoutoPair
+
+
+------aoutoPair----https://github.com/jiangmiao/auto-pairs
 <M-e>, se refiere a --- alt +e ----->pone en parenteis todo la palabra, pero antes poner "()"
 
 input: (|){["foo"]} (press <M-}> at |)
