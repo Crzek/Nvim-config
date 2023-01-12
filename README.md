@@ -27,8 +27,25 @@ dir `.\AppData\Local\`
 creat a directory 
 ```sh
 md nvim
-``
+```
 creat init.vim
-``sh
+```sh
 New-Item init.vim
 ```
+
+#### Set an Alias in Windows (PowerShell)
+check if do I have a profile.
+```sh
+Test-Path $PROFILE
+```
+It should return True, if not, try the following command to create a profile:
+```sh
+ni -Path $PROFILE -force & notepad.exe $PROFILE
+```
+Note: `Notepad $PROFILE` create a document in PATH `\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` you must write in this document `set-alias <alias> <comand>` e.g `set-alias v nvim`.
+if you installed Neovim with Chocolatey, the PATH is `C:\tools\neovim\nvim-win64\bin\nvim.exe`
+
+
+![Notepad $PROFILE](https://user-images.githubusercontent.com/60371296/212175950-35fc153d-acdc-46c5-bfde-6177dded9fe8.png)
+
+
