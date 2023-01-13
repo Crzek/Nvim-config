@@ -22,7 +22,15 @@ mkdir nvim
 touch nvim/init.vim
 ```
 ### Windows
-dir `.\AppData\Local\`
+1. install `Nodejs` and `Chocolatey`
+2. Open PowerShell
+```sh
+   choco install neovim
+   choco install ag
+```
+Note: `ag` is for FZF
+
+3. go to dir `.\AppData\Local\`
 
 creat a directory 
 ```sh
