@@ -49,3 +49,48 @@ if you installed Neovim with Chocolatey, the PATH is `C:\tools\neovim\nvim-win64
 ![Notepad $PROFILE](https://user-images.githubusercontent.com/60371296/212175950-35fc153d-acdc-46c5-bfde-6177dded9fe8.png)
 
 
+## Configuration
+1. Check all plugins are installed in nvim
+   ```vim
+   :PlugInstall
+   ```
+2. Install yarn
+    * **Kali Linux**
+      ```sh
+      yarn install
+      yarn build
+      reset
+      ```
+      ```sh
+      npm install -g yarn
+      ```
+    * **Windows**
+       
+      You must have nodejs installed, [more](https://phoenixnap.com/kb/yarn-windows)
+        ```sh
+        npm install --global yarn
+        ```
+        Note: if you get the following error, `yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded because running scripts is         disabled on this system. For
+        more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.` Run the following command and select [Y]:
+        ```sh
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+        ```
+3. Coc.vim
+   We will implement **coc-snippets** and **coc-higtligh**
+   
+   * Open Nvim and run:
+   
+   ```vim
+   :CocInastall Coc-snippets
+   :CocInstall Coc-highlight
+   ```
+4. Download and install font and icons [NerdFonts](https://www.nerdfonts.com/)
+
+5. LSP
+    ```vim
+    :lspInstallInfo 
+    ```
+    If you want to view errors, run in nvim, `:checkhealth`
+
+
+
