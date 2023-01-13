@@ -1,6 +1,4 @@
-
 "________Configuracion basica
-
 set nocompatible      "para vim-polyglot"
 
 " Esto pliega automáticamente los archivos que abre, según la sangría, 
@@ -103,7 +101,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-
 "---Plug navegador de archivos
 Plug 'scrooloose/nerdtree'
 
@@ -149,7 +146,7 @@ let mapleader=' '             "la tecla lider es un spacion, ya no :
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>q! :q!<CR>
+nnoremap <leader>q1 :q!<CR>
 
 nmap <leader>s <Plug>(easymotion-s2)
 
@@ -185,16 +182,16 @@ let g:webdevicons_conceal_nerdtree_brackets =1
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>                        "moverse por la bentanas de arriba
 
-"--------config vim-airline
-let g:airline_theme='solarized light'
-let g:airline_solarized_bg='dark'
+"--------config vim-airline more themes https://github.com/vim-airline/vim-airline/wiki/Screenshots#solarized-light
+let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 
 map <C-z> :bprevious<CR>                "cambiar de buffer (ventanas) 
 map <C-x> :bnext<CR>
 map <C-c> :bdelete<CR>                   "eliminar buffer"
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
@@ -226,9 +223,10 @@ EOF
 
 "-----snippet (atajos) javascript, config 
 "https://github.com/mlaursen/vim-react-snippets
+
 " let g:UtilSnipsExpandTrigger="<CR>"
 
-
+let g:coc_snippet_expand_key = '<CR>'
 
 "----commentary config
 nnoremap <space>/ :Commentary<CR>
@@ -259,8 +257,9 @@ nnoremap <C-D> :Prettier<CR>:
 "------UltiSnips -----vim-snippets-----------
 let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger = ";"          
-"corrige el error de TAB"
+let g:UltiSnipsExpandTrigger = ';'  
+"corrige el error de TAB,la linea de arriba, ya que para ir al siguiente en
+"ultisppets
 
 "--------Coc-highlight
 autocmd CursorHold * silent call CocActionAsync('highlight') 
@@ -284,11 +283,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-let g:coc_snippet_next = '<tab>'
-
-
 
 "------COC config predeterminado, estraido de git https://github.com/neoclide/coc.nvim
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -305,40 +302,44 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
 " Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+" diagnostics appear/become resolved
+set signcolumn=yes
 
-
-" Use tab for trigger completion with characters ahead and navigate.
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
+
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" Make <CR> to accept selected completion item or notify coc.nvim to format
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

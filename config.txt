@@ -1,0 +1,101 @@
+-------Comienzo----
+git clone <repo>
+2. PlugInstall # mirar si estan todos instalados
+3. ir a \nvim\plugged\coc.nvim
+4. instalar yarn #linux
+
+      yarn install
+      yarn build
+  reset
+
+si es Windows     https://phoenixnap.com/kb/yarn-windows
+npm install --global yarn
+2. dir /coc.vim
+yarn build
+yarn build
+
+--Warnning---- si no se puede instalar YARN o si sale el siguinete error:  https://bobbyhadz.com/blog/yarn-cannot-be-loaded-running-scripts-disabled
+ 
+yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded because running scripts is disabled on this system. For
+more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+ejecutar siguiente comando como administrador 
+1. Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+2. Select {Y}
+
+
+
+-----cocVIM-----
+Implementaremos coc snnippets y higtlight
+
+1. abrir veovim 
+2. escribe el siguiente comando 
+:CocInastall Coc-snipetts
+:CocInstall coc-highlight
+
+-----Configuracio---
+1. abrir neovim
+2. :Cocconfig , esto abrira el nvim/coc-setting.js
+3. escribir
+{
+  "suggest.noselect":false
+
+}
+
+------Descargar e instalar fuente e iconos HACK https://www.nerdfonts.com/font-downloads
+
+-----LSP para diferentes lenguajes de progrmacion
+:lspInstallInfo 
+
+----visualizar errores 
+ :checkhealth
+
+Comandos Basicos Para NeoVim
+https://stsewd.dev/es/posts/neovim-installation-configuration/
+
+------------------------
+- instalacion en KAli  -
+------------------------
+sudo apt install neovim
+
+
+------------------------ instalacion en KAli  - ------------------------ Los archivos para la configuracion se guardan en la raiz siguiente en nvim Este archivo se localiza en ~/.config/nvim/init.vim, si no existe, créalo.
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+
+/home/suprem/.local/share/
+
+
+----------Basico ----------------
+
+Moverse por vim
+
+h,j,k,l, (w,e,b)
+
+Insertar texto
+i,I
+a,A
+
+borrar texto
+d,D
+x,X
+
+Borrar + Insrtar
+c,C
+s,S
+
+deshacr y Rehacer
+u
+control + r
+
+guardar archivos
+:w
+
+abrir archivos
+:e <ruta>
+
+Autocompletar
+Control + P
+control + n
+
