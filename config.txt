@@ -32,7 +32,6 @@ Implementaremos coc snnippets y higtlight
 2. escribe el siguiente comando 
 :CocInastall Coc-snipetts
 :CocInstall coc-highlight
-
 -----Configuracio---
 1. abrir neovim
 2. :Cocconfig , esto abrira el nvim/coc-setting.js
