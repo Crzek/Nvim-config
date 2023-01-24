@@ -43,6 +43,8 @@ setear un alias
 2. escribir
     set-Alias -name <alias porpio> -value <comando>
     set-Alias -name v -value nvim
+
+
 h,j,k,l, (w,e,b)
 
 w   ->inicio primera palabra, NEXT
@@ -102,6 +104,7 @@ x   ->corta lo que marca el cursor
 X   -> corta lo que hay antes del cursor
 diw -> Modo Normal, corta la palabra
 dw  -> elimina palabra
+S   -> elimina linia y Inserta
 
 daw  para eliminar una palabra (más espacios en blanco al final )
 diw  para borrar una palabra interior _ _
@@ -113,13 +116,16 @@ dab   da(o da)  para eliminar un bloque rodeado de(
 daB   da{o da}  para eliminar un bloque rodeado de{
 dat  para eliminar una etiqueta HTML
 dit  para eliminar el contenido de una etiqueta HTML
-
+dt'  Elimina hasta la comilla
+dt)  Elimina hasta el )
 -----Borrar + Insrtar
 c
 C
 cw  -> borra desde el cursor hasta el fin de la palabra + se pone un modo Insertar
 ciw -> borra la palabra (no importa donde este el cursor)+ se pone en modo Insertar
 s,S
+ct' -> elimina hata ' + insert
+ct) -> elimna hasta ) + insert
 
 -----deshacr y Rehacer
 u
@@ -143,9 +149,10 @@ control + n
 ----Dividir pantalla
 :sp  ---> dividir misma pantalla
 
------Navegar 
+-----Navegar https://www.udemy.com/course/vim-aumenta-tu-velocidad-de-desarrollo/learn/lecture/15495844#notes
+
 gd  -->ir a la definicion de la funcio, tiene que estar en el cursor
-df   --> ir al archivo donde se encuentra
+df   --> ir al archivo donde se encuentra, ejemplo la clase (vs--> ctrol + clic derecho
 Control + o   --> NEXT
 Control + i   -->back 
 
@@ -171,9 +178,17 @@ zE elimina todos los pliegues.
 [z mover al inicio del pliegue abierto.
 ]z mover hasta el final del pliegue abierto.
 
-Files <archivo>  ----busca un archivo 
 
+-----FZF
+1. installar  --> choco install ag
+:Files <archivo>  ----busca un archivo 
+:Ag  <str>
+------Sangriado
+zo  Abrir Bloques de sangría
+zc  Cierra Bloques de sangría
 
+zR  abre todas las identacion
+zM  Cierra todas las indent
 
 ------aoutoPair----https://github.com/jiangmiao/auto-pairs
 <M-e>, se refiere a --- alt +e ----->pone en parenteis todo la palabra, pero antes poner "()"
