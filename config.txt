@@ -1,3 +1,11 @@
+El comando sería el siguiente:
+New-Item -ItemType SymbolicLink -Path "path_to_link" -Value "path_to_target_folder"
+
+Donde:
+
+"path_to_link" es la ruta donde se creará el enlace simbólico.
+"path_to_target_folder" es la ruta de la carpeta objetivo a la que apuntará el enlace simbólico.
+
 -------Comienzo----
 git clone <repo>
 2. PlugInstall # mirar si estan todos instalados
