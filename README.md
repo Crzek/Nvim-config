@@ -1,4 +1,4 @@
-# Nvim_kl_config
+# Nvim-config
 This is the configuration of my NeoVim, at first it was for Kali Linux, but I also use it for Windows systems.
 
 ## Presentation
