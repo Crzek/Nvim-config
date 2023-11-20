@@ -47,7 +47,7 @@ set clipboard=unnamedplus			"para poder utilizar el portapapeles del sistema ope
 
 "------Instalacion
 "pulggins----------------------------------------------------------------------------------------------------------------"
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sheerun/vim-polyglot'
 
@@ -255,7 +255,7 @@ nnoremap <C-D> :Prettier<CR>:
 
 "---------Coc-snippets configuration------------
 "------UltiSnips -----vim-snippets-----------
-let g:UltiSnipsSnippetDirectories=[$HOME.'/AppData/Local/nvim/plugged/vim-snippets/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger = ';'  
 "corrige el error de TAB,la linea de arriba, ya que para ir al siguiente en

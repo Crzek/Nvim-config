@@ -89,8 +89,8 @@ if you installed Neovim with Chocolatey, the PATH is `C:\tools\neovim\nvim-win64
    * Open Nvim and run:
    
    ```vim
-   :CocInastall Coc-snippets
-   :CocInstall Coc-highlight
+   :CocInastall coc-snippets
+   :CocInstall coc-highlight
    ```
 4. Download and install font and icons [NerdFonts](https://www.nerdfonts.com/)
 
